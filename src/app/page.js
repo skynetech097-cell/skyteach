@@ -189,19 +189,36 @@ export default function Home() {
     },
   ]
 
+  const trackRef = useRef(null);
+
+  useEffect(() => {
+    let position = 0;
+    const speed = 0.9;
+
+    const animate = () => {
+      position -= speed;
+      if (Math.abs(position) >= trackRef.current.scrollWidth / 2) {
+        position = 0;
+      }
+      trackRef.current.style.transform = `translateX(${position}px)`;
+      requestAnimationFrame(animate);
+    };
+
+    requestAnimationFrame(animate);
+  }, []);
+
   return (
     <main className="relative">
       <section className="header_banner relative">
         <Script
           type="module"
-          src="https://unpkg.com/@splinetool/viewer@1.12.67/build/spline-viewer.js"
+          src="https://unpkg.com/@splinetool/viewer@1.12.69/build/spline-viewer.js"
         />
         <spline-viewer 
           url="https://prod.spline.design/6PPzV2EcRbTTLY32/scene.splinecode"
-          style={{willChange: 'transform'}}
           loading="lazy"
         ></spline-viewer>
-
+        
         <div className="spline_overlay"></div>
       </section>
 
@@ -326,6 +343,23 @@ export default function Home() {
 
       <section className="partners my-20 min-[992px]:px-15 px-10 max-[576px]:px-6">
         <div className="container max-w-full">
+          <div className="my-16 relative">
+            <div className="overflow-hidden w-full">
+              <div
+                ref={trackRef}
+                className="flex items-center min-[1300px]:gap-15 gap-10 w-max"
+              >
+                {[...companies, ...companies].map((item, index) => (
+                  <div key={index} className="relative flex-shrink-0">
+                    <Image src={item.img} alt="company logo" width={110} height={60} />
+                    <div className="overlay"></div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="fade-left"></div>
+            <div className="fade-right"></div>
+          </div>
         </div>
       </section>
 
@@ -406,7 +440,7 @@ export default function Home() {
                     {project.images.map((img, i) => (
                       <div
                         key={i}
-                        className={`relative p-2 
+                        className={`relative h-fit p-2 
                         ${i === 1 ? "max-[768px]:hidden" : ""}
                         min-[1400px]:rounded-[40px] 
                         min-[1200px]:rounded-[34px] 
@@ -415,14 +449,13 @@ export default function Home() {
                         style={{
                           boxShadow:
                             "0 0 13px #00000075, inset 0 1px #ffffff99, inset 0 -1px #ffffff38, inset 2px 0 #8b8b8b45, inset -2px 0 #8b8b8b45",
-                          minHeight: "260px",
                         }}
                       >
                         <Image
                           src={img}
-                          alt={project.title}
+                          alt=""
                           fill
-                          className="object-cover rounded-lg"
+                          className="object-cover rounded-lg h-full"
                         />
                       </div>
                     ))}
@@ -457,7 +490,7 @@ export default function Home() {
             {feedback.map((item, index) => (
               <div className="p-7 rounded-[20px] feedback_class  flex flex-col justify-between" key={index}>
                 <p className="text-white text-sm sm:text-base md:text-lg lg:text-lg font-medium">
-                  &ldquo;{item.review}&rdquo;
+                  "{item.review}"
                 </p>
 
                 <div className="mt-7 flex items-center gap-3">

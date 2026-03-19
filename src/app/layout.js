@@ -2,7 +2,7 @@ import "./globals.css";
 import { Michroma, Inter } from "next/font/google";
 import Navbar from "./component/navbar";
 import Footer from "./component/footer";
-import SmoothScroll from "./component/smoothScroll";
+import { ReactLenis } from "lenis/react";
 
 const michroma = Michroma({
   subsets: ["latin"],
@@ -26,11 +26,21 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body
         className={`${michroma.variable} ${inter.variable}`}>
-            <SmoothScroll>
-              <Navbar />
-              {children}
-              <Footer />
-            </SmoothScroll>
+        <ReactLenis root
+          options={{
+            lerp: 0.1,
+            duration: 1.2,
+            orientation: 'vertical',
+            gestureOrientation: 'vertical',
+            smoothWheel: true,
+            wheelMultiplier: 1,
+            smoothTouch: false,
+            touchMultiplier: 2,
+          }}>
+          <Navbar />
+          {children}
+          <Footer />
+        </ReactLenis>
       </body>
     </html>
   );
