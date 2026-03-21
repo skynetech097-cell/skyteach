@@ -25,7 +25,7 @@ const Navbar = () => {
 
     return (
         <>
-            <section className="hero-banner sticky w-full min-[992px]:px-15 px-10 max-[576px]:px-6 z-6">
+            <section className="hero-banner sticky w-full min-[992px]:px-[87px] px-10 max-[576px]:px-6 z-6">
                 <div className="container max-w-full">
                     <div className="link_section rounded-[123px]">
                         <div className="flex min-[992px]:justify-start justify-between items-center gap-6">

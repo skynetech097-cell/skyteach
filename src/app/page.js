@@ -209,7 +209,7 @@ export default function Home() {
 
   return (
     <main className="relative">
-      {/* <section className="header_banner relative">
+      <section className="header_banner relative">
         <Script
           type="module"
           src="https://unpkg.com/@splinetool/viewer@1.12.69/build/spline-viewer.js"
@@ -221,10 +221,10 @@ export default function Home() {
 
         <div className="spline_overlay"></div>
         <div className="spline_overlay2"></div>
-      </section> */}
+      </section>
 
       <section className="homeBg pt-20">
-        <section className="about_us pb-20 relative min-[992px]:px-15 px-10 max-[576px]:px-6">
+        <section className="about_us pb-20 relative min-[992px]:px-[87px] px-10 max-[576px]:px-6">
           <div className="container relative max-w-full">
             <div className="p-4 bg-black/0 rounded-[40px] inline-flex justify-center items-center gap-2.5"
               style={{
@@ -253,8 +253,8 @@ export default function Home() {
               </div>
             </div>
 
-           {/*  <div className="about-circle-1"></div>
-            <div className="about-circle-2"></div> */}
+            <div className="about-circle-1"></div>
+            <div className="about-circle-2"></div>
           </div>
 
           <div className="statistics relative z-2 mt-10">
@@ -290,7 +290,7 @@ export default function Home() {
           <div className="about-circle-4 z-1"></div>
         </section>
 
-        <section className="services relative min-[992px]:px-15 px-10 max-[576px]:px-6">
+        <section className="services relative min-[992px]:px-[87px] px-10 max-[576px]:px-6">
           <div className="container relative z-1 max-w-full">
             <h2 className="text-white text-3xl min-[780px]:text-4xl min-[1200px]:text-6xl font-normal leading-[45px] min-[780px]:leading-[55px] min-[1200px]:leading-[76px]">We don't just build digital products, we create experiences that help brands grow.</h2>
 
@@ -337,9 +337,9 @@ export default function Home() {
           <div className="services-circle-4"></div>
         </section>
 
-        <section className="partners my-20 min-[992px]:px-15 px-10 max-[576px]:px-6">
+        <section className="partners mt-20 min-[992px]:px-[87px] px-10 max-[576px]:px-6">
           <div className="container max-w-full">
-            <div className="my-16 relative">
+            <div className="mt-16 relative">
               <div className="overflow-hidden w-full">
                 <div
                   ref={trackRef}
@@ -359,15 +359,15 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="projects relative">
-          <div className="min-[992px]:px-15 px-10 max-[576px]:px-6">
+        <section className="projects relative py-20">
+          <div className="min-[992px]:px-[87px] px-10 max-[576px]:px-6">
             <div className="container relative z-1 max-w-full pb-16 overflow-hidden" style={{
               background: 'background: linear-gradient(182deg, #01010100 0%, #01010169 100%)', backdropFilter: 'blur(15px)'
             }}>
               <div className="grid grid-cols-1 mt-6">
                 <div className="flex justify-between items-start gap-y-5 min-[1000px]:items-end min-[1000px]:flex-row flex-col">
                   <div className="">
-                    <h2 className="text-white max-[576px]:text-4xl min-[780px]:text-4xl min-[1200px]:text-6xl font-normal font-['Michroma'] max-[576px]:leading-[53px] leading-[48px]">Recent Digital Creations</h2>
+                    <h2 className="text-white max-[576px]:text-4xl min-[780px]:text-4xl min-[1200px]:text-6xl font-normal font-['Michroma'] max-[576px]:leading-[53px] leading-[88px]">Recent Digital Creations</h2>
                     <p className="text-white text-lg leading-7 mt-8">Innovative platforms, brand experiences, and digital products designed to help modern businesses grow.</p>
                   </div>
 
@@ -406,7 +406,7 @@ export default function Home() {
                       {project.services.map((service, i) => (
                         <li key={i}>{service}</li>
                       ))}
-                      <li className="mt-6">{project.location}</li>
+                      <li className="mt-7">{project.location}</li>
                     </ul>
 
                   </div>
@@ -467,11 +467,11 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="projects-circle-1"></div>
+          {/* <div className="projects-circle-1"></div> */}
 
         </section>
 
-        <section className="clients_feedback relative py-20 min-[992px]:px-15 px-10 max-[576px]:px-6">
+        <section className="clients_feedback relative pb-20 min-[992px]:px-[87px] px-10 max-[576px]:px-6">
           <div className="container max-w-full z-1 relative">
             <div className="p-4 bg-black/0 rounded-[40px] inline-flex justify-center items-center gap-2.5" style={{
               boxShadow: '0 0 13px #00000075, inset 0 1px #ffffff99, inset 0 -1px #ffffff38, inset 2px 0 #8b8b8b45, inset -2px 0 #8b8b8b45'
