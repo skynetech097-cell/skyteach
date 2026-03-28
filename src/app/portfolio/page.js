@@ -9,18 +9,18 @@ import { FaArrowRightLong } from "react-icons/fa6";
 const page = () => {
 
     const [active, setActive] = useState(null);
-  const [isDesktop, setIsDesktop] = useState(false);
+    const [isDesktop, setIsDesktop] = useState(false);
 
-  useEffect(() => {
-    const checkScreen = () => {
-      setIsDesktop(window.innerWidth >= 992);
-    };
+    useEffect(() => {
+        const checkScreen = () => {
+            setIsDesktop(window.innerWidth >= 992);
+        };
 
-    checkScreen();
-    window.addEventListener("resize", checkScreen);
+        checkScreen();
+        window.addEventListener("resize", checkScreen);
 
-    return () => window.removeEventListener("resize", checkScreen);
-  }, []);
+        return () => window.removeEventListener("resize", checkScreen);
+    }, []);
 
     const projects = [
         {
@@ -111,13 +111,13 @@ const page = () => {
     return (
         <main className='relative wholeBg'>
             <section className="header_banner relative">
-                <Image src="/portfolioHero.png" alt="About us" width={1920} height={650} className='w-full h-full object-cover ' />
+                <Image src="/portfolioHero.png" alt="About us" width={1920} height={650} className='w-full h-full object-cover max-[1300px]:h-[450px]' />
 
-                <div className='absolute bottom-0 w-full min-[1400px]:pb-20 min-[992px]:pb-10 pb-6 min-[992px]:px-[87px] px-10 max-[576px]:px-6'>
+                <div className='absolute bottom-0 w-full min-[1400px]:pb-10 pb-8 min-[1400px]:px-[87px] px-14 max-[768px]:px-8'>
                     <div className='container max-w-full'>
-                        <h1 className="text-white min-[1700px]:text-9xl min-[1400px]:text-7xl text-5xl min-[992px]:text-7xl font-['Michroma'] min-[1700px]:leading-[140px] min-[1400px]:leading-[85px] min-[992px]:leading-[85px] leading-[60px] min-[992px]:w-full min-[768px]:w-[760px]">Crafting Meaningful Digital Products</h1>
+                        <h1 className="text-white min-[1850px]:text-[120px] min-[1600px]:text-[102px] min-[1400px]:text-[85px] text-5xl min-[1030px]:text-[65px] max-[670px]:text-[40px] max-[500px]:text-[30px] font-['Michroma'] min-[1700px]:leading-[140px] min-[1400px]:leading-[115px] min-[992px]:leading-[85px] leading-[60px] max-[500px]:leading-[45px] min-[992px]:w-full min-[768px]:w-[700px]">Crafting Meaningful Digital Products</h1>
 
-                        <div className='flex items-center relative z-1 justify-between min-[1600px]:mt-[60px] min-[992px]:mt-[30px] mt-5 gap-14 max-[992px]:flex-col max-[992px]:items-start max-[992px]:gap-5'>
+                        <div className='flex items-center relative z-1 justify-between min-[1600px]:mt-[30px] min-[992px]:mt-[30px] mt-5 gap-14 max-[992px]:flex-col max-[992px]:items-start max-[992px]:gap-5'>
                             <p className="w-full max-w-[1250px] justify-start text-white min-[992px]:font-semibold font-medium leading-5">Branding, web design, Webflow, creative development, and beyond—focused on clarity, performance, and user experience.</p>
                         </div>
                     </div>
@@ -125,7 +125,6 @@ const page = () => {
             </section>
 
             <section className="projects relative pb-20 pt-10">
-                
                 <div>
                     {projects.map((project, index) => (
                         <div
@@ -135,9 +134,7 @@ const page = () => {
                                 setActive(index);
                             }}
                             onMouseLeave={() => isDesktop && setActive(null)}
-                            className={`border-t overflow-hidden border-b px-11 relative py-10 min-[1200px]:py-16 transition-all duration-500 ${active === index ? "border-red-500" : "border-gray-500"
-                                }`}
-                        >
+                            className={`border-t overflow-hidden border-b min-[1400px]:px-[87px] px-14 max-[768px]:px-8 relative py-10 min-[1200px]:py-16 transition-all duration-500 ${active === index ? "border-red-500" : "border-gray-500"}`}>
                             <div className="container max-w-full">
                                 <div className="grid relative z-1 min-[1400px]:grid-cols-[1.2fr_1.2fr_0.6fr] min-[1000px]:grid-cols-[0.9fr_1.5fr_0.6fr] grid-cols-1">
 
@@ -188,7 +185,7 @@ const page = () => {
                                                     min-[1400px]:rounded-[40px] 
                                                     min-[1200px]:rounded-[34px] 
                                                     min-[992px]:rounded-[30px] 
-                                                    max-[768px]:rounded-[28px]`}
+                                                    max-[992px]:rounded-[28px]`}
                                                 style={{
                                                     boxShadow:
                                                         "0 0 13px #00000075, inset 0 1px #ffffff99, inset 0 -1px #ffffff38, inset 2px 0 #8b8b8b45, inset -2px 0 #8b8b8b45",
@@ -206,7 +203,7 @@ const page = () => {
 
                                     <div className="inner-projects-circle-1"></div>
                                     <div className="inner-projects-circle-2"></div>
-                                    <div className="inner-projects-circle-3"></div>
+                                    <div className="inner-projects-circle-3 max-[992px]:hidden"></div>
                                 </div>
 
                             </div>
@@ -218,7 +215,7 @@ const page = () => {
 
             </section>
 
-            <section className="clients_feedback relative pb-20 min-[992px]:px-[87px] px-10 max-[576px]:px-6">
+            <section className="clients_feedback relative pb-15 min-[1400px]:px-[87px] px-14 max-[768px]:px-8">
                 <div className="container max-w-full z-1 relative">
                     <div className="p-4 bg-black/0 rounded-[40px] inline-flex justify-center items-center gap-2.5" style={{
                         boxShadow: '0 0 13px #00000075, inset 0 1px #ffffff99, inset 0 -1px #ffffff38, inset 2px 0 #8b8b8b45, inset -2px 0 #8b8b8b45'
@@ -226,8 +223,8 @@ const page = () => {
                         <div className="justify-start text-white font-bold font-['Inter'] leading-5">Client Feedback</div>
                     </div>
 
-                    <div className="mt-4 text-white max-[576px]:text-4xl text-5xl min-[780px]:text-6xl min-[992px]:text-7xl font-normal font-['Michroma'] min-[1200px]:leading-[88px] leading-[68px] max-[576px]:leading-[53px]">What Our Clients Say</div>
-                    <p className="text-white mt-7 text-lg">Real feedback from businesses and startups that have partnered with SKYNETECH to build modern digital experiences and powerful online platforms.</p>
+                    <div className="mt-4 text-white max-[576px]:text-4xl text-5xl min-[969px]:text-6xl min-[1125px]:text-7xl font-normal font-['Michroma'] min-[1200px]:leading-[88px] leading-[68px] max-[576px]:leading-[53px]">What Our Clients Say</div>
+                    <p className="text-white mt-7 text-lg max-[576px]:text-[16px]">Real feedback from businesses and startups that have partnered with SKYNETECH to build modern digital experiences and powerful online platforms.</p>
 
                     <div className="grid grid-cols-1 min-[576px]:grid-cols-2 min-[1400px]:grid-cols-4 mt-16 gap-6">
                         {feedback.map((item, index) => (
@@ -249,8 +246,8 @@ const page = () => {
                     </div>
                 </div>
                 <div className="feedback-bg absolute w-full h-[300px] top-0 left-0 -z-1"></div>
-                <div className="feedback-circle-1"></div>
-                <div className="feedback-circle-2"></div>
+                <div className="feedback-circle-1 max-[768px]:hidden"></div>
+                <div className="feedback-circle-2 max-[1400px]:hidden"></div>
                 <div className="feedback-circle-3"></div>
                 <div className="feedback-circle-4"></div>
             </section>

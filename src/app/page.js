@@ -209,7 +209,7 @@ export default function Home() {
 
   return (
     <main className="relative">
-      <section className="header_banner relative">
+       <section className="header_banner relative max-[768px]:mt-[100px]" >
         <Script
           type="module"
           src="https://unpkg.com/@splinetool/viewer@1.12.69/build/spline-viewer.js"
@@ -219,11 +219,11 @@ export default function Home() {
           loading="lazy"
         ></spline-viewer>
 
-        <div className="spline_overlay"></div>
+        <div className="spline_overlay max-[768px]:hidden"></div>
         <div className="spline_overlay2"></div>
       </section>
 
-      <section className="homeBg pt-20">
+      <section className="homeBg pt-20 max-[768px]:pt-0">
         <section className="about_us pb-20 relative min-[992px]:px-[87px] px-10 max-[576px]:px-6">
           <div className="container relative max-w-full">
             <div className="p-4 bg-black/0 rounded-[40px] inline-flex justify-center items-center gap-2.5"
@@ -233,8 +233,8 @@ export default function Home() {
               <div className=" text-white font-bold font-['Inter'] leading-5">Discover our Story</div>
             </div>
 
-            <div className=" text-white mt-4 text-4xl min-[780px]:text-6xl min-[1200px]:text-7xl  font-normal font-['Michroma'] leading-[88px]">About Us</div>
-            <p className="text-white mt-7 text-lg">SKYNETECH is a growing digital agency built for the new generation of brands. We combine creativity, technology, and strategy to design digital experiences that help businesses launch, scale, and stand out. As a startup team, we move fast, adapt quickly, and focus on building smart solutions that create real impact. From websites and applications to branding and digital content, our goal is simple   help businesses grow in the digital world.</p>
+            <div className=" text-white mt-4 max-[576px]:mt-1 text-4xl min-[780px]:text-6xl min-[1200px]:text-7xl font-normal font-['Michroma'] leading-[88px]">About Us</div>
+            <p className="text-white mt-7 max-[576px]:mt-2 text-lg">SKYNETECH is a growing digital agency built for the new generation of brands. We combine creativity, technology, and strategy to design digital experiences that help businesses launch, scale, and stand out. As a startup team, we move fast, adapt quickly, and focus on building smart solutions that create real impact. From websites and applications to branding and digital content, our goal is simple   help businesses grow in the digital world.</p>
 
             <div className="grid min-[1300px]:grid-cols-[2.2fr_0.8fr] min-[1100px]:grid-cols-[1.8fr_1.2fr] gap-4 mt-10 z-1 relative">
               <div>
@@ -264,7 +264,7 @@ export default function Home() {
                   <div className="card px-16 py-6 bg-black/0 rounded-[40px]" key={index}>
                     <div className="text-center">
                       <Image src={item.img} alt={item.title} className="mx-auto" width={60} height={60} />
-                      <div className="text-center text-white min-[700px]:text-4xl text-3xl font-normal font-['Michroma'] leading-[48px]">{item.number}</div>
+                      <div className="text-center text-white min-[700px]:text-4xl text-3xl font-normal font-['Michroma'] leading-[48px] mt-3">{item.number}</div>
                       <p className="text-center font-light text-white text-base leading-6 mt-1">{item.title}</p>
                     </div>
                   </div>
@@ -388,9 +388,7 @@ export default function Home() {
                   setActive(index);
                 }}
                 onMouseLeave={() => isDesktop && setActive(null)}
-                className={`border-t overflow-hidden border-b px-11 relative py-10 min-[1200px]:py-16 transition-all duration-500 ${active === index ? "border-red-500" : "border-gray-500"
-                  }`}
-              >
+                className={`border-t overflow-hidden border-b min-[1400px]:px-[87px] px-14 max-[768px]:px-8 relative py-10 min-[1200px]:py-16 transition-all duration-500 ${active === index ? "border-red-500" : "border-gray-500"}`}>
                 <div className="container max-w-full">
                   <div className="grid relative z-1 min-[1400px]:grid-cols-[1.2fr_1.2fr_0.6fr] min-[1000px]:grid-cols-[0.9fr_1.5fr_0.6fr] grid-cols-1">
 
@@ -437,11 +435,11 @@ export default function Home() {
                         <div
                           key={i}
                           className={`relative h-fit p-2 
-                        ${i === 1 ? "max-[768px]:hidden" : ""}
-                        min-[1400px]:rounded-[40px] 
-                        min-[1200px]:rounded-[34px] 
-                        min-[992px]:rounded-[30px] 
-                        max-[768px]:rounded-[28px]`}
+                                                    ${i === 1 ? "max-[768px]:hidden" : ""}
+                                                    min-[1400px]:rounded-[40px] 
+                                                    min-[1200px]:rounded-[34px] 
+                                                    min-[992px]:rounded-[30px] 
+                                                    max-[992px]:rounded-[28px]`}
                           style={{
                             boxShadow:
                               "0 0 13px #00000075, inset 0 1px #ffffff99, inset 0 -1px #ffffff38, inset 2px 0 #8b8b8b45, inset -2px 0 #8b8b8b45",
@@ -459,7 +457,7 @@ export default function Home() {
 
                     <div className="inner-projects-circle-1"></div>
                     <div className="inner-projects-circle-2"></div>
-                    <div className="inner-projects-circle-3"></div>
+                    <div className="inner-projects-circle-3 max-[992px]:hidden"></div>
                   </div>
 
                 </div>
@@ -471,7 +469,7 @@ export default function Home() {
 
         </section>
 
-        <section className="clients_feedback relative pb-20 min-[992px]:px-[87px] px-10 max-[576px]:px-6">
+        <section className="clients_feedback relative pb-15 min-[1400px]:px-[87px] px-14 max-[768px]:px-8">
           <div className="container max-w-full z-1 relative">
             <div className="p-4 bg-black/0 rounded-[40px] inline-flex justify-center items-center gap-2.5" style={{
               boxShadow: '0 0 13px #00000075, inset 0 1px #ffffff99, inset 0 -1px #ffffff38, inset 2px 0 #8b8b8b45, inset -2px 0 #8b8b8b45'
@@ -479,8 +477,8 @@ export default function Home() {
               <div className="justify-start text-white font-bold font-['Inter'] leading-5">Client Feedback</div>
             </div>
 
-            <div className="mt-4 text-white max-[576px]:text-4xl text-5xl min-[780px]:text-6xl min-[992px]:text-7xl font-normal font-['Michroma'] min-[1200px]:leading-[88px] leading-[68px] max-[576px]:leading-[53px]">What Our Clients Say</div>
-            <p className="text-white mt-7 text-lg">Real feedback from businesses and startups that have partnered with SKYNETECH to build modern digital experiences and powerful online platforms.</p>
+            <div className="mt-4 text-white max-[576px]:text-4xl text-5xl min-[969px]:text-6xl min-[1125px]:text-7xl font-normal font-['Michroma'] min-[1200px]:leading-[88px] leading-[68px] max-[576px]:leading-[53px]">What Our Clients Say</div>
+            <p className="text-white mt-7 text-lg max-[576px]:text-[16px]">Real feedback from businesses and startups that have partnered with SKYNETECH to build modern digital experiences and powerful online platforms.</p>
 
             <div className="grid grid-cols-1 min-[576px]:grid-cols-2 min-[1400px]:grid-cols-4 mt-16 gap-6">
               {feedback.map((item, index) => (
@@ -502,8 +500,8 @@ export default function Home() {
             </div>
           </div>
           <div className="feedback-bg absolute w-full h-[300px] top-0 left-0 -z-1"></div>
-          <div className="feedback-circle-1"></div>
-          <div className="feedback-circle-2"></div>
+          <div className="feedback-circle-1 max-[768px]:hidden"></div>
+          <div className="feedback-circle-2 max-[1400px]:hidden"></div>
           <div className="feedback-circle-3"></div>
           <div className="feedback-circle-4"></div>
         </section>
