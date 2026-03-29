@@ -68,7 +68,7 @@ h6 .heading {
 
 .footer_Section,
 .about_us,
-.projects {
+.projects, .conatct_us {
   background: linear-gradient(180deg, #010101 8%, #270000 100%);
 }
 
@@ -910,4 +910,22 @@ input {
   .company-about-circle-5 {
     right: 56%;
   }
+}
+
+.map_overlay{
+  background: #E30613;
+  mix-blend-mode: soft-light;
+}
+
+.contact_form input::placeholder, .contact_form textarea::placeholder{
+  color: #9CA3AF !important;
+}
+
+.contact_form input, .contact_form textarea{
+  color: #9CA3AF !important;
+}
+
+select{
+  color: #9CA3AF;
+  appearance: none;
 }

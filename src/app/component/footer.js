@@ -49,26 +49,26 @@ const Footer = () => {
                                         </Link>
                                     </li>
 
-                                    <li>
+                                    {/* <li>
                                         <Link href="/services" className={`text-white text-decoration-none ${pathname === "/services" ? "active" : ""}`}>
                                             Services
                                         </Link>
-                                    </li>
+                                    </li> */}
 
                                     <li>
-                                        <Link href="/about" className={`text-white text-decoration-none ${pathname === "" ? "active" : ""}`}>
+                                        <Link href="/contact" className={`text-white text-decoration-none ${pathname === "" ? "active" : ""}`}>
                                             Get in Touch
                                         </Link>
                                     </li>
 
                                     <li>
-                                        <Link href="/about" className={`text-white text-decoration-none ${pathname === "/terms" ? "active" : ""}`}>
+                                        <Link href="/" className={`text-white text-decoration-none ${pathname === "/terms" ? "active" : ""}`}>
                                             Terms
                                         </Link>
                                     </li>
 
                                     <li>
-                                        <Link href="/about" className={`text-white text-decoration-none ${pathname === "/privacy-policy" ? "active" : ""}`}>
+                                        <Link href="/" className={`text-white text-decoration-none ${pathname === "/privacy-policy" ? "active" : ""}`}>
                                             Privacy Policy
                                         </Link>
                                     </li>

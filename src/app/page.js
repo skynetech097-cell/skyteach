@@ -280,9 +280,9 @@ export default function Home() {
                     <p className="text-white text-lg leading-7 mt-2">Let's work together to create something impactful.</p>
                   </div>
 
-                  <button>
+                  <Link href={'/contact'}>
                     <img src="/getinTouch_2.svg" alt="Get in Touch" />
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -373,7 +373,7 @@ export default function Home() {
                     <p className="text-white text-lg leading-7 mt-8">Innovative platforms, brand experiences, and digital products designed to help modern businesses grow.</p>
                   </div>
 
-                  <Link href={''}>
+                  <Link href={'/portfolio'}>
                     <img src="/viewAll.svg" alt="Get in Touch" />
                   </Link>
                 </div>

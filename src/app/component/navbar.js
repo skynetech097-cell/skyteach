@@ -52,16 +52,16 @@ const Navbar = () => {
                                     </Link>
                                 </li>
 
-                                <li>
+                                {/* <li>
                                     <Link href="/services" className={`text-white text-decoration-none ${pathname === "/services" ? "active" : ""}`}>
                                         Services
                                     </Link>
-                                </li>
+                                </li> */}
                             </ul>
 
-                            <button className="main_btn max-[992px]:hidden">
+                            <Link href={'/contact'} className="main_btn max-[992px]:hidden">
                                 <Image src="/getInTouch_btn.svg" alt="Get in touch" width={130} height={50} className="relative" />
-                            </button>
+                            </Link>
                             
                             <div className="min-[992px]:hidden cursor-pointer" onClick={() => setOpen(true)}>
                                 <FaBarsStaggered size={28}/>
