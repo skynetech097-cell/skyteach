@@ -26,14 +26,18 @@ export default function mainWrapper({ children }) {
     }, [pathname]);
 
     useEffect(() => {
+        // Disable on mobile/tablets where mouse hover is irrelevant
+        if (window.innerWidth < 992) return;
+
         let currentX = 0, currentY = 0;
         let targetX = 0, targetY = 0;
+        let animationId;
 
         const circles = document.querySelectorAll(".blur-circle");
+        if (!circles.length) return;
 
         const handleMouseMove = (e) => {
             const { innerWidth, innerHeight } = window;
-
             targetX = (e.clientX / innerWidth - 0.5) * 2;
             targetY = (e.clientY / innerHeight - 0.5) * 2;
         };
@@ -48,19 +52,20 @@ export default function mainWrapper({ children }) {
                 circle.style.transform = `translate(${-currentX * 30}px, ${-currentY * 30}px)`;
             });
         
-            requestAnimationFrame(animate);
+            animationId = requestAnimationFrame(animate);
         }
 
-        animate();
+        animationId = requestAnimationFrame(animate);
 
         return () => {
             window.removeEventListener("mousemove", handleMouseMove);
+            if (animationId) cancelAnimationFrame(animationId);
         };
     }, [pathname]); 
 
     return (
         <>
-            <ReactLenis root>
+            <ReactLenis root options={{ lerp: 0.1, duration: 1.5, smoothWheel: true }}>
                 <Navbar />
                 {children}
                 <Footer />
