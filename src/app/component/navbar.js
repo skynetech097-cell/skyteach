@@ -10,7 +10,6 @@ const Navbar = () => {
     const pathname = usePathname();
     const [open, setOpen] = useState(false);
 
-    // stop scrolling when sidebar opens
     useEffect(() => {
         if (open) {
             document.body.style.overflow = "hidden";
@@ -25,7 +24,7 @@ const Navbar = () => {
 
     return (
         <>
-            <section className="hero-banner sticky w-full min-[992px]:px-15 px-10 max-[576px]:px-6 z-6">
+            <section className="hero-banner fixed w-full min-[1400px]:px-[87px] px-14 max-[768px]:px-8 z-6">
                 <div className="container max-w-full">
                     <div className="link_section rounded-[123px]">
                         <div className="flex min-[992px]:justify-start justify-between items-center gap-6">
@@ -52,16 +51,16 @@ const Navbar = () => {
                                     </Link>
                                 </li>
 
-                                <li>
+                                {/* <li>
                                     <Link href="/services" className={`text-white text-decoration-none ${pathname === "/services" ? "active" : ""}`}>
                                         Services
                                     </Link>
-                                </li>
+                                </li> */}
                             </ul>
 
-                            <button className="main_btn max-[992px]:hidden">
+                            <Link href={'/contact'} className="main_btn max-[992px]:hidden">
                                 <Image src="/getInTouch_btn.svg" alt="Get in touch" width={130} height={50} className="relative" />
-                            </button>
+                            </Link>
                             
                             <div className="min-[992px]:hidden cursor-pointer" onClick={() => setOpen(true)}>
                                 <FaBarsStaggered size={28}/>
