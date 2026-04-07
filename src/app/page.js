@@ -206,11 +206,19 @@ export default function Home() {
     let position = 0;
     const speed = 0.9;
     let animationId;
+    let trackWidth = trackRef.current.scrollWidth / 2;
+
+    const updateWidth = () => {
+      if (trackRef.current) {
+        trackWidth = trackRef.current.scrollWidth / 2;
+      }
+    };
+    window.addEventListener("resize", updateWidth);
 
     const animate = () => {
       if (!trackRef.current) return;
       position -= speed;
-      if (Math.abs(position) >= trackRef.current.scrollWidth / 2) {
+      if (Math.abs(position) >= trackWidth) {
         position = 0;
       }
       trackRef.current.style.transform = `translateX(${position}px)`;
@@ -219,7 +227,10 @@ export default function Home() {
 
     animationId = requestAnimationFrame(animate);
 
-    return () => cancelAnimationFrame(animationId);
+    return () => {
+      cancelAnimationFrame(animationId);
+      window.removeEventListener("resize", updateWidth);
+    };
   }, []);
 
 
@@ -236,7 +247,6 @@ export default function Home() {
             />
             <spline-viewer
               url="https://prod.spline.design/6PPzV2EcRbTTLY32/scene.splinecode"
-              loading="lazy"
             ></spline-viewer>
           </>
         )}
@@ -263,13 +273,13 @@ export default function Home() {
 
             <div className="grid min-[1300px]:grid-cols-[2.2fr_0.8fr] min-[1100px]:grid-cols-[1.8fr_1.2fr] gap-4 mt-10 z-1 relative">
               <div>
-                <img src="/about_us.png" alt="About us" />
+                <img src="/about_us.png" alt="About us" loading="lazy" />
               </div>
               <div className="grid grid-rows-3 max-[1100px]:gap-y-5">
                 {about.map((item, index) => (
                   <div key={index}>
                     <div className="flex items-center gap-2">
-                      <img src={item.img} />
+                      <img src={item.img} alt="" loading="lazy" />
                       <div className=" text-white text-xl font-bold leading-6">{item.title}</div>
                     </div>
                     <p className=" text-white mt-2 text-base font-light leading-6">{item.content}</p>
@@ -304,7 +314,7 @@ export default function Home() {
                   </div>
 
                   <Link href={'/contact'}>
-                    <img src="/getinTouch_2.svg" alt="Get in Touch" />
+                    <img src="/getinTouch_2.svg" alt="Get in Touch" loading="lazy" />
                   </Link>
                 </div>
               </div>
@@ -326,7 +336,7 @@ export default function Home() {
                 <div key={index} className="card p-2.5 bg-black/0 rounded-[53px] max-[576px]:rounded-[24px] relative services_card">
                   <div className="grid min-[1100px]:grid-cols-[1.0fr_1.2fr_0.8fr] grid-cols-1 max-[1100px]:pb-5 pt-2 items-start min-[1280px]:items-center max-[1400px]:items-center min-[1400px]:items-start">
                     <div className="hidden justify-center max-[1100px]:flex ">
-                      <img src={item.img} className="max-[768px]:w-full max-[768px]:px-1" alt={item.heading} />
+                      <img src={item.img} className="max-[768px]:w-full max-[768px]:px-1" alt={item.heading} loading="lazy" />
                     </div>
 
                     <div className="flex items-start min-[1600px]:mt-12 max-[1600px]:mt-8 ps-5 max-[1400px]:mt-1 max-[1100px]:mt-4">
@@ -342,13 +352,13 @@ export default function Home() {
 
                       <div className="mt-9 max-[1100px]:mt-6">
                         <Link href={item.path}>
-                          <img src="/learn_more.svg" alt="Learn more" />
+                          <img src="/learn_more.svg" alt="Learn more" loading="lazy" />
                         </Link>
                       </div>
                     </div>
 
                     <div className="flex justify-end max-[1100px]:hidden">
-                      <img src={item.img} className="" alt={item.heading} />
+                      <img src={item.img} className="" alt={item.heading} loading="lazy" />
                     </div>
                   </div>
                 </div>
@@ -397,7 +407,7 @@ export default function Home() {
                   </div>
 
                   <Link href={'/portfolio'}>
-                    <img src="/viewAll.svg" alt="Get in Touch" />
+                    <img src="/viewAll.svg" alt="Get in Touch" loading="lazy" />
                   </Link>
                 </div>
               </div>
@@ -526,7 +536,7 @@ export default function Home() {
                   </p>
 
                   <div className="mt-7 flex items-center gap-3">
-                    <img src={item.img} width={65} height={65} alt={item.name} />
+                    <img src={item.img} width={65} height={65} alt={item.name} loading="lazy" />
 
                     <div>
                       <h6 className="text-white text-lg font-medium">{item.name}</h6>
