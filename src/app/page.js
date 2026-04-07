@@ -10,6 +10,7 @@ export default function Home() {
 
   const [active, setActive] = useState(null);
   const [isDesktop, setIsDesktop] = useState(false);
+  const [canLoadSpline, setCanLoadSpline] = useState(false);
 
   useEffect(() => {
     const checkScreen = () => {
@@ -19,7 +20,15 @@ export default function Home() {
     checkScreen();
     window.addEventListener("resize", checkScreen);
 
-    return () => window.removeEventListener("resize", checkScreen);
+    // Defer heavy Spline loading to improve PageSpeed score
+    const timer = setTimeout(() => {
+      setCanLoadSpline(true);
+    }, 2000);
+
+    return () => {
+      window.removeEventListener("resize", checkScreen);
+      clearTimeout(timer);
+    };
   }, []);
 
 
@@ -218,15 +227,19 @@ export default function Home() {
   return (
     <main className="relative">
       <section className="header_banner relative max-[768px]:mt-[100px]" style={{ minHeight: '100vh' }}>
-        <Script
-          type="module"
-          src="https://unpkg.com/@splinetool/viewer@1.12.69/build/spline-viewer.js"
-          strategy="lazyOnload"
-        />
-        <spline-viewer
-          url="https://prod.spline.design/6PPzV2EcRbTTLY32/scene.splinecode"
-          loading="lazy"
-        ></spline-viewer>
+        {canLoadSpline && (
+          <>
+            <Script
+              type="module"
+              src="https://unpkg.com/@splinetool/viewer@1.12.69/build/spline-viewer.js"
+              strategy="lazyOnload"
+            />
+            <spline-viewer
+              url="https://prod.spline.design/6PPzV2EcRbTTLY32/scene.splinecode"
+              loading="lazy"
+            ></spline-viewer>
+          </>
+        )}
 
 
         <div className="spline_overlay max-[768px]:hidden"></div>

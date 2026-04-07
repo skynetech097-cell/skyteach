@@ -6,11 +6,13 @@ const michroma = Michroma({
   subsets: ["latin"],
   weight: "400",
   variable: "--font-michroma",
+  display: "swap",
 });
 
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
+  display: "swap",
 });
 
 export const metadata = {
