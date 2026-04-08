@@ -249,7 +249,7 @@ const page = () => {
                                 </p>
 
                                 <div className="mt-7 flex items-center gap-3">
-                                    <img src={item.img} width={65} height={65} alt={item.name} />
+                                    <Image src={item.img} width={65} height={65} alt={item.name} />
 
                                     <div>
                                         <h6 className="text-white text-lg font-medium">{item.name}</h6>

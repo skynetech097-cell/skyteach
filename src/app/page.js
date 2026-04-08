@@ -273,7 +273,7 @@ export default function Home() {
 
             <div className="grid min-[1300px]:grid-cols-[2.2fr_0.8fr] min-[1100px]:grid-cols-[1.8fr_1.2fr] gap-4 mt-10 z-1 relative">
               <div>
-                <img src="/about_us.png" alt="About us" width="600" height="500" style={{ width: '100%', height: 'auto' }} loading="lazy" />
+                <Image src="/about_us.png" alt="About us" width={600} height={500} style={{ width: '100%', height: 'auto' }} />
               </div>
               <div className="grid grid-rows-3 max-[1100px]:gap-y-5">
                 {about.map((item, index) => (
@@ -536,7 +536,7 @@ export default function Home() {
                   </p>
 
                   <div className="mt-7 flex items-center gap-3">
-                    <img src={item.img} width={65} height={65} alt={item.name} loading="lazy" />
+                    <Image src={item.img} width={65} height={65} alt={item.name} />
 
                     <div>
                       <h6 className="text-white text-lg font-medium">{item.name}</h6>
