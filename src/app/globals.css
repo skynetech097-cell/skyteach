@@ -29,7 +29,7 @@ body {
 
 * {
   -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
+  /* scrollbar-width: none; */
 }
 
 body.loading {
@@ -91,6 +91,11 @@ h6 .heading {
 
 .spline_overlay2 {
   height: 76px;
+  background: linear-gradient(180deg, rgba(1, 1, 1, 0) 0%, #010101 100%);
+  position: absolute;
+  width: 100%;
+  bottom: 0px;
+  left: 0;
 }
 
 .services,
@@ -104,6 +109,12 @@ h6 .heading {
 
 .hero-banner {
   top: 30px;
+}
+
+@media (max-width:576px){
+  .hero-banner {
+    top: 15px;
+  }
 }
 
 .link_section {
