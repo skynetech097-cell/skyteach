@@ -118,6 +118,7 @@ export default function Home() {
 
   const projects = [
     {
+      slug: "meridian",
       title: "Meridian",
       description:
         "An AI-powered analytics platform designed to help brands understand how AI is influencing their digital presence.",
@@ -129,6 +130,7 @@ export default function Home() {
       ],
     },
     {
+      slug: "heimdall-power",
       title: "Heimdall Power",
       description:
         "A modern digital platform created to present Heimdall Power’s technology.",
@@ -146,6 +148,7 @@ export default function Home() {
       ],
     },
     {
+      slug: "cula",
       title: "Cula",
       description:
         "A futuristic digital experience designed to explore carbon management solutions through immersive visuals, interactive dashboards, and modern product storytelling.",
@@ -157,6 +160,7 @@ export default function Home() {
       ],
     },
     {
+      slug: "arqitel",
       title: "Arqitel",
       description:
         "A visually driven website experience that showcases architectural innovation through immersive layouts, interactive elements, and modern web technology.",
@@ -225,6 +229,7 @@ export default function Home() {
         1024: { perPage: 6, gap: "2rem" },
         768: { perPage: 5, gap: "1.5rem" },
         480: { perPage: 4, gap: "1rem" },
+        0: { perPage: 2, gap: "1rem" },
       },
     });
 
@@ -319,18 +324,19 @@ export default function Home() {
             <div className=" text-white mt-4 max-[576px]:mt-1 text-4xl min-[780px]:text-6xl min-[1200px]:text-7xl font-normal font-['Michroma'] leading-[88px} max-[576px]:leading-[65px]">About Us</div>
             <p className="text-white mt-7 max-[576px]:mt-2 text-lg max-[576px]:text-base relative z-1">SKYNETECH is a growing digital agency built for the new generation of brands. We combine creativity, technology, and strategy to design digital experiences that help businesses launch, scale, and stand out. As a startup team, we move fast, adapt quickly, and focus on building smart solutions that create real impact. From websites and applications to branding and digital content, our goal is simple   help businesses grow in the digital world.</p>
 
-            <div className="grid  min-[1300px]:grid-cols-[2.2fr_0.8fr] min-[1100px]:grid-cols-[1.8fr_1.2fr] gap-4 mt-10 z-1 relative">
+            <div className="grid  min-[1300px]:grid-cols-[2.2fr_0.8fr]  gap-4 mt-10 z-1 relative">
               <div>
-                <img src="/about_us.webp" alt="About us" width={1112} height={602} className="w-full" />
+                <img src="/about_us.webp" alt="About us" width={1112} height={624} className="w-full max-[600px]:hidden" />
+                <img src="/about_us1.webp" alt="About us" width={913} height={624} className="w-full min-[600px]:hidden" />
               </div>
-              <div className="grid grid-rows-3 max-[1100px]:gap-y-5">
+              <div className="max-[1100px]:grid  grid-rows-3 max-[1100px]:gap-y-5 gap-4 flex flex-col">
                 {about.map((item, index) => (
-                  <div key={index}>
+                  <div key={index} className="h-fit">
                     <div className="flex items-center gap-2">
                       <img src={item.img} alt="" width="53" height="54" loading="lazy" />
                       <div className=" text-white text-xl font-bold leading-6">{item.title}</div>
                     </div>
-                    <p className=" text-white mt-2 text-base min-[1400px]:text-[18px] font-light leading-6">{item.content}</p>
+                    <p className=" text-white mt-2 text-base min-[1400px]:text-[18px] font-light">{item.content}</p>
                   </div>
                 ))}
               </div>
@@ -345,7 +351,7 @@ export default function Home() {
               <div className="grid min-[1250px]:grid-cols-4 min-[600px]:grid-cols-2 gap-6">
                 {statistics.map((item, index) => (
                   <div className="card min-[1360px]:px-16 px-12 py-6 bg-black/0 rounded-[40px]" style={{
-                    boxShadow: '0 0 13px #00000075, inset 0 1px #ffffff99, inset 0 -1px #ffffff38, inset 2px 0 #8b8b8b45, inset -2px 0 #8b8b8b45'
+                    boxShadow: '0 0 13px #00000075, inset 0 1px #ffffff99, inset 0 -1px #ffffff38, inset 2px 0 #8b8b8b45, inset -2px 0 #8b8b8b45', background: "#14050538"
                   }} key={index}>
                     <div className="text-center">
                       <img src={item.img} className="mx-auto" alt={item.title} width="64" height="64" loading="lazy" />
@@ -358,7 +364,7 @@ export default function Home() {
 
               <div className="grid grid-cols-1 mt-6">
                 <div className="card min-[1200px]:px-15 px-10 max-[576px]:p-6 relative z-2 py-10 bg-black/0 rounded-[40px] max-[1000px]:flex-col flex justify-between min-[1100px]:items-center promotion max-[1100px]:gap-6" style={{
-                  boxShadow: '0 0 13px #00000075, inset 0 1px #ffffff99, inset 0 -1px #ffffff38, inset 2px 0 #8b8b8b45, inset -2px 0 #8b8b8b45'
+                  boxShadow: '0 0 13px #00000075, inset 0 1px #ffffff99, inset 0 -1px #ffffff38, inset 2px 0 #8b8b8b45, inset -2px 0 #8b8b8b45', background: "#14050538"
                 }}>
                   <div className="">
                     <div className="text-white text-2xl min-[780px]:text-3xl min-[1200px]:text-4xl font-normal font-['Michroma'] leading-[48px] max-[576px]:leading-[40px]">Ready to grow your brand digitally?</div>
@@ -496,8 +502,8 @@ export default function Home() {
                     y: e.clientY - rect.top - 24,  // offset by half button height
                   };
                 }}
-                onClick={() => router.push("/detail")}
-                className={`border-t overflow-hidden border-b min-[992px]:px-[87px] px-10 max-[576px]:px-6 relative py-10 min-[1200px]:py-16 transition-colors duration-500 cursor-none ${active === index ? "border-red-500" : "border-gray-500"
+                onClick={() => router.push(`/detail/${project.slug}`)}
+                className={`border-t overflow-hidden border-b min-[992px]:px-[87px] px-10 max-[576px]:px-6 relative py-10 min-[1200px]:py-16 transition-colors duration-500 bg-[#140505] z-2 cursor-none ${active === index ? "border-red-500" : "border-gray-500"
                   }`}
               >
                 <div className="max-[768px]:hidden">
@@ -558,7 +564,7 @@ export default function Home() {
                       className="projects_image relative flex flex-col max-[992px]:flex-col-reverse mt-6"
                     >
                       <div className="max-[992px]:mt-3 relative z-2 min-[768px]:hidden">
-                        <Link href={"/detail"} aria-label={`Learn more about ${project.title}`}>
+                        <Link href={`/detail/${project.slug}`} aria-label={`Learn more about ${project.title}`}>
                           <div
                             className="min-[992px]:p-5 p-4 bg-black/0 rounded-[31px] inline-flex justify-center items-center gap-2.5 w-auto"
                             style={{
@@ -578,16 +584,16 @@ export default function Home() {
                           return (
                             <div
                               key={i}
-                              className={`relative h-fit p-2 ${i === 1 ? "max-[768px]:hidden" : ""} min-[1400px]:rounded-[40px] min-[1200px]:rounded-[34px] min-[992px]:rounded-[30px] max-[992px]:rounded-[28px]`}
-                              style={{
+                              className={`relative projet-mockups ${i === 1 ? "max-[768px]:hidden" : ""}`}>
+                              <div className="min-[1400px]:rounded-[40px] p-2 min-[1200px]:rounded-[34px] min-[992px]:rounded-[30px] max-[992px]:rounded-[28px] h-fit" style={{
                                 boxShadow: "0 0 13px #00000075, inset 0 1px #ffffff99, inset 0 -1px #ffffff38, inset 2px 0 #8b8b8b45, inset -2px 0 #8b8b8b45",
-                              }}
-                            >
-                              {isVideo ? (
-                                <video src={img} autoPlay muted loop playsInline className="w-full h-full object-cover min-[1400px]:rounded-[34px] min-[1200px]:rounded-[34px] min-[992px]:rounded-[30px] max-[992px]:rounded-[22px]" />
-                              ) : (
-                                <Image src={img} alt="" fill className="object-cover min-[1400px]:rounded-[34px] min-[1200px]:rounded-[34px] min-[992px]:rounded-[30px] max-[992px]:rounded-[22px] h-full" />
-                              )}
+                              }}>
+                                {isVideo ? (
+                                  <video src={img} autoPlay muted loop playsInline className="w-full h-full object-cover min-[1400px]:rounded-[34px] min-[1200px]:rounded-[34px] min-[992px]:rounded-[30px] max-[992px]:rounded-[22px]" />
+                                ) : (
+                                  <Image src={img} alt="" fill className="object-cover min-[1400px]:rounded-[34px] min-[1200px]:rounded-[34px] min-[992px]:rounded-[30px] max-[992px]:rounded-[22px] h-auto" />
+                                )}
+                              </div>
                             </div>
                           );
                         })}
