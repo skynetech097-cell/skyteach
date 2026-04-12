@@ -30,7 +30,7 @@ const Footer = () => {
                             </div>
                         </div>
 
-                       <div className="grid grid-cols-1 min-[1100px]:grid-cols-[2.4fr_0.6fr] justify-between items-end mt-3 footer_tabs gap-6 min-[1100px]:gap-0">
+                        <div className="grid grid-cols-1 min-[1100px]:grid-cols-[2.4fr_0.6fr] justify-between items-end mt-3 footer_tabs gap-6 min-[1100px]:gap-0">
                             <div className="">
                                 <Image src="/main_logo.svg" alt="Skynetech" width={240} height={80} className="relative" />
 
@@ -74,10 +74,18 @@ const Footer = () => {
                             </div>
                             <div className="">
                                 <div className="flex min-[1100px]:justify-end justify-center items-center gap-6">
-                                    <Link href={''} target="_blank"><FaTwitter fill="#fff" size={24} /></Link>
-                                    <Link href={''} target="_blank"><FaFacebook fill="#fff" size={24} /></Link>
-                                    <Link href={''} target="_blank"><FaLinkedin fill="#fff" size={24} /></Link>
-                                    <Link href={''} target="_blank"><FaInstagram fill="#fff" size={24} /></Link>
+                                    <Link href="https://twitter.com/skynetech" target="_blank" aria-label="Follow us on Twitter">
+                                        <FaTwitter fill="#fff" size={24} />
+                                    </Link>
+                                    <Link href="https://facebook.com/skynetech" target="_blank" aria-label="Follow us on Facebook">
+                                        <FaFacebook fill="#fff" size={24} />
+                                    </Link>
+                                    <Link href="https://linkedin.com/company/skynetech" target="_blank" aria-label="Follow us on LinkedIn">
+                                        <FaLinkedin fill="#fff" size={24} />
+                                    </Link>
+                                    <Link href="https://instagram.com/skynetech" target="_blank" aria-label="Follow us on Instagram">
+                                        <FaInstagram fill="#fff" size={24} />
+                                    </Link>
                                 </div>
                             </div>
                         </div>
