@@ -237,7 +237,7 @@ export default function Home() {
 
   return (
     <main className="relative">
-      <section className="header_banner relative max-[768px]:mt-[100px]" style={{ minHeight: '100vh' }}>
+      <section className="header_banner relative max-[768px]:mt-[100px]">
         {canLoadSpline && (
           <>
             <Script
