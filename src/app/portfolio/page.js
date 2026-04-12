@@ -112,7 +112,6 @@ const page = () => {
 
         return () => {
             window.removeEventListener("resize", checkScreen);
-            clearTimeout(timer);
         };
     }, []);
 

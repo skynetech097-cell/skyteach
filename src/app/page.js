@@ -280,7 +280,7 @@ export default function Home() {
 
   return (
     <main className="relative">
-      {/*  <section className="header_banner relative max-[768px]:mt-[100px] max-[576px]:mt-[80px]">
+       <section className="header_banner relative max-[768px]:mt-[100px] max-[576px]:mt-[80px]">
         <div className="max-[600px]:hidden">
           {canLoadSpline && (
             <>
@@ -309,7 +309,7 @@ export default function Home() {
         </div>
 
         <div className="spline_overlay2 absolute"></div>
-      </section> */}
+      </section>
 
       <section className="homeBg pt-20">
         <section className="about_us pb-20 relative min-[992px]:px-[87px] px-10 max-[576px]:px-6">

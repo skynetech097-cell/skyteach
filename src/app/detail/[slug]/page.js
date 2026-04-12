@@ -10,9 +10,10 @@ export function generateStaticParams() {
     ];
   }
 
-const page = ({ params }) => {
+const page = async ({ params }) => {
+  const { slug } = await params;
   return (
-    <DetailProject slug={params.slug} />
+    <DetailProject slug={slug} />
   )
 }
 
