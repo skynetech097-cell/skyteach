@@ -989,3 +989,10 @@ select {
   will-change: transform;
 }
 
+.splide__list {
+  transition: none !important;
+}
+
+.splide__track {
+  overflow: hidden;
+}

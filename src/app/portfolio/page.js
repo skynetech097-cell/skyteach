@@ -270,22 +270,40 @@ const page = () => {
                                             </Link>
                                         </div>
 
-                                        <div className="grid grid-cols-[2.0fr_1.0fr] max-[768px]:grid-cols-1 projects_showcase gap-6 mt-3 projects_img relative z-2">
+                                        <div className="grid grid-cols-[2.0fr_1.0fr] max-[768px]:grid-cols-1 projects_showcase gap-6 mt-3 projects_img relative z-2 items-start">
                                             {project.images.map((img, i) => {
                                                 const isVideo = img.endsWith(".webm") || img.endsWith(".mp4");
                                                 return (
                                                     <div
                                                         key={i}
-                                                        className={`relative h-fit p-2 ${i === 1 ? "max-[768px]:hidden" : ""} min-[1400px]:rounded-[40px] min-[1200px]:rounded-[34px] min-[992px]:rounded-[30px] max-[992px]:rounded-[28px]`}
-                                                        style={{
-                                                            boxShadow: "0 0 13px #00000075, inset 0 1px #ffffff99, inset 0 -1px #ffffff38, inset 2px 0 #8b8b8b45, inset -2px 0 #8b8b8b45",
-                                                        }}
+                                                        className={`relative projet-mockups ${i === 1 ? "max-[768px]:hidden" : ""}`}
                                                     >
-                                                        {isVideo ? (
-                                                            <video src={img} autoPlay muted loop playsInline className="w-full h-full object-cover min-[1400px]:rounded-[34px] min-[1200px]:rounded-[34px] min-[992px]:rounded-[30px] max-[992px]:rounded-[22px]" />
-                                                        ) : (
-                                                            <Image src={img} alt="" fill className="object-cover min-[1400px]:rounded-[34px] min-[1200px]:rounded-[34px] min-[992px]:rounded-[30px] max-[992px]:rounded-[22px] h-full" />
-                                                        )}
+                                                        <div
+                                                            className="min-[1400px]:rounded-[40px] p-2 min-[1200px]:rounded-[34px] min-[992px]:rounded-[30px] max-[992px]:rounded-[28px]"
+                                                            style={{
+                                                                boxShadow: "0 0 13px #00000075, inset 0 1px #ffffff99, inset 0 -1px #ffffff38, inset 2px 0 #8b8b8b45, inset -2px 0 #8b8b8b45",
+                                                            }}
+                                                        >
+                                                            {isVideo ? (
+                                                                <video
+                                                                    src={img}
+                                                                    autoPlay
+                                                                    muted
+                                                                    loop
+                                                                    playsInline
+                                                                    className="w-full h-full object-cover min-[1400px]:rounded-[34px] min-[1200px]:rounded-[34px] min-[992px]:rounded-[30px] max-[992px]:rounded-[22px]"
+                                                                />
+                                                            ) : (
+                                                                <div
+                                                                    className="relative w-full">
+                                                                    <Image width={1046} height={517}
+                                                                        src={img}
+                                                                        alt=""
+                                                                        className="object-cover min-[1400px]:rounded-[34px] min-[1200px]:rounded-[34px] min-[992px]:rounded-[30px] max-[992px]:rounded-[22px]"
+                                                                    />
+                                                                </div>
+                                                            )}
+                                                        </div>
                                                     </div>
                                                 );
                                             })}

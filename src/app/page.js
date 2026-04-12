@@ -110,7 +110,14 @@ export default function Home() {
     { img: '/company_3.svg' },
     { img: '/company_4.svg' },
     { img: '/company_5.svg' },
-    /*  { img: '/company_6.svg' }, */
+    { img: '/company_7.svg' },
+    { img: '/company_8.svg' },
+    { img: '/company_9.svg' },
+    { img: '/company_1.svg' },
+    { img: '/company_2.svg' },
+    { img: '/company_3.svg' },
+    { img: '/company_4.svg' },
+    { img: '/company_5.svg' },
     { img: '/company_7.svg' },
     { img: '/company_8.svg' },
     { img: '/company_9.svg' },
@@ -219,13 +226,17 @@ export default function Home() {
       gap: "3rem",
       arrows: false,
       pagination: false,
+      waitForTransition: false,
+      easing: "linear",
+      speed: 600,
       autoScroll: {
-        speed: 1,
+        speed: 0.8,
         pauseOnHover: false,
         pauseOnFocus: false,
+        rewind: false,
       },
       breakpoints: {
-        1300: { perPage: 8, gap: "2.5rem" },
+        1300: { perPage: 7, gap: "0" },
         1024: { perPage: 6, gap: "2rem" },
         768: { perPage: 5, gap: "1.5rem" },
         480: { perPage: 4, gap: "1rem" },
@@ -233,7 +244,7 @@ export default function Home() {
       },
     });
 
-    splide.mount({ AutoScroll });
+    splide.mount({ AutoScroll }); // ✅ must be inside useEffect
 
     return () => splide.destroy();
   }, []);
@@ -280,7 +291,7 @@ export default function Home() {
 
   return (
     <main className="relative">
-       <section className="header_banner relative max-[768px]:mt-[100px] max-[576px]:mt-[80px]">
+      <section className="header_banner relative max-[768px]:mt-[100px] max-[576px]:mt-[70px]">
         <div className="max-[600px]:hidden">
           {canLoadSpline && (
             <>
@@ -304,7 +315,7 @@ export default function Home() {
             muted
             playsInline
             controls={false}
-            className="w-full min-[480px]:h-full object-cover max-[480px]:h-[270px]"
+            className="w-full min-[480px]:h-full object-cover max-[480px]:h-[230px] max-[400px]:h-[210px]"
           />
         </div>
 
@@ -438,13 +449,13 @@ export default function Home() {
                   <div className="splide__track">
                     <ul className="splide__list">
                       {companies.map((item, index) => (
-                        <li key={index} className="splide__slide">
+                        <li key={index} className="splide__slide m-0">
                           <div className="relative flex items-center justify-center">
                             <Image
                               src={item.img}
                               alt="company logo"
-                              width={110}
-                              height={60}
+                              width={112}
+                              height={70}
                             />
                             <div className="overlay"></div>
                           </div>
@@ -498,8 +509,8 @@ export default function Home() {
                   if (!isDesktop) return;
                   const rect = e.currentTarget.getBoundingClientRect();
                   targetPosRef.current = {
-                    x: e.clientX - rect.left - 75, // offset by half button width
-                    y: e.clientY - rect.top - 24,  // offset by half button height
+                    x: e.clientX - rect.left - 75, 
+                    y: e.clientY - rect.top - 24, 
                   };
                 }}
                 onClick={() => router.push(`/detail/${project.slug}`)}
@@ -546,7 +557,6 @@ export default function Home() {
                     </ul>
                   </div>
 
-                  {/* Smooth real-height animation */}
                   <div
                     style={{
                       height: isDesktop
@@ -578,20 +588,38 @@ export default function Home() {
                         </Link>
                       </div>
 
-                      <div className="grid grid-cols-[2.0fr_1.0fr] max-[768px]:grid-cols-1 projects_showcase gap-6 mt-3 projects_img relative z-2">
+                      <div className="grid grid-cols-[2.0fr_1.0fr] max-[768px]:grid-cols-1 projects_showcase gap-6 mt-3 projects_img relative z-2 items-start">
                         {project.images.map((img, i) => {
                           const isVideo = img.endsWith(".webm") || img.endsWith(".mp4");
                           return (
                             <div
                               key={i}
-                              className={`relative projet-mockups ${i === 1 ? "max-[768px]:hidden" : ""}`}>
-                              <div className="min-[1400px]:rounded-[40px] p-2 min-[1200px]:rounded-[34px] min-[992px]:rounded-[30px] max-[992px]:rounded-[28px] h-fit" style={{
-                                boxShadow: "0 0 13px #00000075, inset 0 1px #ffffff99, inset 0 -1px #ffffff38, inset 2px 0 #8b8b8b45, inset -2px 0 #8b8b8b45",
-                              }}>
+                              className={`relative projet-mockups ${i === 1 ? "max-[768px]:hidden" : ""}`}
+                            >
+                              <div
+                                className="min-[1400px]:rounded-[40px] p-2 min-[1200px]:rounded-[34px] min-[992px]:rounded-[30px] max-[992px]:rounded-[28px]"
+                                style={{
+                                  boxShadow: "0 0 13px #00000075, inset 0 1px #ffffff99, inset 0 -1px #ffffff38, inset 2px 0 #8b8b8b45, inset -2px 0 #8b8b8b45",
+                                }}
+                              >
                                 {isVideo ? (
-                                  <video src={img} autoPlay muted loop playsInline className="w-full h-full object-cover min-[1400px]:rounded-[34px] min-[1200px]:rounded-[34px] min-[992px]:rounded-[30px] max-[992px]:rounded-[22px]" />
+                                  <video
+                                    src={img}
+                                    autoPlay
+                                    muted
+                                    loop
+                                    playsInline
+                                    className="w-full h-full object-cover min-[1400px]:rounded-[34px] min-[1200px]:rounded-[34px] min-[992px]:rounded-[30px] max-[992px]:rounded-[22px]"
+                                  />
                                 ) : (
-                                  <Image src={img} alt="" fill className="object-cover min-[1400px]:rounded-[34px] min-[1200px]:rounded-[34px] min-[992px]:rounded-[30px] max-[992px]:rounded-[22px] h-auto" />
+                                  <div
+                                    className="relative w-full">
+                                    <Image width={1046} height={517}
+                                      src={img}
+                                      alt=""
+                                      className="object-cover min-[1400px]:rounded-[34px] min-[1200px]:rounded-[34px] min-[992px]:rounded-[30px] max-[992px]:rounded-[22px]"
+                                    />
+                                  </div>
                                 )}
                               </div>
                             </div>

@@ -218,7 +218,7 @@ const page = ({ slug }) => {
                     </div>
                 </div>
 
-                <div className='container max-w-full z-1 relative min-[1400px]:pt-[106px] min-[992px]:pt-[70px] pt-[40px]'>
+                <div className='container max-w-full z-1 relative px-4 min-[1400px]:pt-[106px] min-[992px]:pt-[70px] pt-[40px]'>
                     <Image src={project.websiteImg} alt="mockup" width={1024} height={1200} className='mx-auto' />
                 </div>
             </section>
@@ -236,7 +236,7 @@ const page = ({ slug }) => {
                             </div>
                             <p>/</p>
                             <div className='max-[335px]:mt-5'>
-                                <Link href={project.liveUrl} aria-label="Live website" className='flex items-center gap-10'>Live Website
+                                <Link href={project.liveUrl} aria-label="Live website" className='flex items-center gap-10 text-white'>Live Website
                                     <svg width="18" height="12" viewBox="0 0 18 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M16.6001 5.59961L11.6001 0.599609M16.6001 5.59961L11.6001 10.5996M16.6001 5.59961H0.600098" stroke="white" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
                                     </svg>

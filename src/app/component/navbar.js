@@ -63,14 +63,13 @@ const Navbar = () => {
                             </Link>
                             
                             <div className="min-[992px]:hidden cursor-pointer" onClick={() => setOpen(true)}>
-                                <FaBarsStaggered size={24}/>
+                                <FaBarsStaggered size={24} fill="#fff"/>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* Blur background */}
             {open && (
                 <div
                     className="fixed inset-0 backdrop-blur-md bg-black/40 z-40"
@@ -78,7 +77,6 @@ const Navbar = () => {
                 ></div>
             )}
 
-            {/* Sidebar */}
             <div className={`fixed top-0 right-0 h-full w-[300px] bg-[#111] z-50 transform transition-transform duration-300 ${open ? "translate-x-0" : "translate-x-full"}`}>
                 
                 <div className="flex justify-end p-6">
@@ -108,7 +106,7 @@ const Navbar = () => {
                 </ul>
 
                 <div className="px-8 mt-10">
-                    <Link href={'/contact'} className="main_btn w-full">
+                    <Link href={'/contact'} className="main_btn w-full" onClick={() => setOpen(false)}>
                         <Image src="/getInTouch_btn.svg" alt="Get in touch" width={130} height={50} />
                     </Link>
                 </div>
