@@ -146,8 +146,9 @@ const page = () => {
                         <textarea className='bg-white rounded-2xl w-full mt-2 resize-none ps-4 pt-4' rows={4} placeholder='Tell us about your project, goals, and requirements…'></textarea>
                       </div>
 
-                      <button className='mt-7' type='submit'>
-                        <Image src={'/contact_btn.svg'} width={'702'} height={62} alt='Contact btn' className='w-full'/>
+                      <button className='mt-7 w-full' type='submit'>
+                        <Image src={'/contact_btn.svg'} width={'702'} height={62} alt='Contact btn' className='w-full max-[500px]:hidden'/>
+                        <Image src={'/contact_btn 2.svg'} width={'370'} height={62} alt='Contact btn' className='w-full min-[500px]:hidden'/>
                       </button>
 
                       <div className='flex justify-center mt-2 items-center gap-1'>
