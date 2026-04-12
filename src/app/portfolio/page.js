@@ -51,7 +51,7 @@ const page = () => {
             services: ["Branding", "Web Design", "Web Development", "Strategy", "UI"],
             location: "US",
             images: [
-                "/cula-1.webm",
+                "/cula-1.mp4",
                 "/cula-2.png",
             ],
         },
@@ -69,7 +69,7 @@ const page = () => {
             ],
             location: "US",
             images: [
-                "/arqitel-1.webm",
+                "/arqitel-1.mp4",
                 "/arqitel-2.png",
             ],
         },
@@ -238,7 +238,6 @@ const page = () => {
                                     </ul>
                                 </div>
 
-                                {/* Smooth real-height animation */}
                                 <div
                                     style={{
                                         height: isDesktop
@@ -285,20 +284,22 @@ const page = () => {
                                                             }}
                                                         >
                                                             {isVideo ? (
-                                                                <video
-                                                                    src={img}
-                                                                    autoPlay
-                                                                    muted
-                                                                    loop
-                                                                    playsInline
-                                                                    className="w-full h-full object-cover min-[1400px]:rounded-[34px] min-[1200px]:rounded-[34px] min-[992px]:rounded-[30px] max-[992px]:rounded-[22px]"
-                                                                />
+                                                                 <div className="relative w-full" style={{ paddingBottom: "49.42%" }}> {/* matches 1046/517 ratio */}
+                                                                 <video
+                                                                   src={img}
+                                                                   autoPlay
+                                                                   muted
+                                                                   loop
+                                                                   playsInline
+                                                                   className="absolute inset-0 w-full h-full object-cover min-[1400px]:rounded-[34px] min-[1200px]:rounded-[34px] min-[992px]:rounded-[30px] max-[992px]:rounded-[22px]"
+                                                                 />
+                                                               </div>
                                                             ) : (
                                                                 <div
                                                                     className="relative w-full">
                                                                     <Image width={1046} height={517}
                                                                         src={img}
-                                                                        alt=""
+                                                                        alt="projects"
                                                                         className="object-cover min-[1400px]:rounded-[34px] min-[1200px]:rounded-[34px] min-[992px]:rounded-[30px] max-[992px]:rounded-[22px]"
                                                                     />
                                                                 </div>

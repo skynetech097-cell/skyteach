@@ -236,9 +236,9 @@ export default function Home() {
         rewind: false,
       },
       breakpoints: {
-        1300: { perPage: 7, gap: "0" },
-        1024: { perPage: 6, gap: "2rem" },
-        768: { perPage: 5, gap: "1.5rem" },
+        1300: { perPage: 4, gap: "0" },
+        1024: { perPage: 5, gap: "2rem" },
+        768: { perPage: 4, gap: "1.5rem" },
         480: { perPage: 4, gap: "1rem" },
         0: { perPage: 2, gap: "1rem" },
       },
@@ -603,14 +603,16 @@ export default function Home() {
                                 }}
                               >
                                 {isVideo ? (
+                                  <div className="relative w-full" style={{ paddingBottom: "49.42%" }}> {/* matches 1046/517 ratio */}
                                   <video
                                     src={img}
                                     autoPlay
                                     muted
                                     loop
                                     playsInline
-                                    className="w-full h-full object-cover min-[1400px]:rounded-[34px] min-[1200px]:rounded-[34px] min-[992px]:rounded-[30px] max-[992px]:rounded-[22px]"
+                                    className="absolute inset-0 w-full h-full object-cover min-[1400px]:rounded-[34px] min-[1200px]:rounded-[34px] min-[992px]:rounded-[30px] max-[992px]:rounded-[22px]"
                                   />
+                                </div>
                                 ) : (
                                   <div
                                     className="relative w-full">
