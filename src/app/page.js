@@ -162,7 +162,7 @@ export default function Home() {
       services: ["Branding", "Web Design", "Web Development", "Strategy", "UI"],
       location: "US",
       images: [
-        "/cula-1.webm",
+        "/cula-1.mp4",
         "/cula-2.png",
       ],
     },
@@ -180,7 +180,7 @@ export default function Home() {
       ],
       location: "US",
       images: [
-        "/arqitel-1.webm",
+        "/arqitel-1.mp4",
         "/arqitel-2.png",
       ],
     },
@@ -337,7 +337,7 @@ export default function Home() {
 
             <div className="grid  min-[1300px]:grid-cols-[2.2fr_0.8fr]  gap-4 mt-10 z-1 relative">
               <div>
-                <img src="/about_us.webp" alt="About us" width={1112} height={624} className="w-full max-[600px]:hidden" />
+                <img src="/about_us.webp" alt="About us" width={1305} height={706} className="w-full max-[600px]:hidden" />
                 <img src="/about_us1.webp" alt="About us" width={913} height={624} className="w-full min-[600px]:hidden" />
               </div>
               <div className="max-[1100px]:grid  grid-rows-3 max-[1100px]:gap-y-5 gap-4 flex flex-col">
@@ -383,7 +383,7 @@ export default function Home() {
                   </div>
 
                   <Link href={'/contact'} aria-label="Get in Touch">
-                    <img src="/getinTouch_2.svg" alt="Get in Touch" />
+                    <img src="/getinTouch_2.svg" alt="Get in Touch" width={137} height={62}/>
                   </Link>
                 </div>
               </div>
@@ -484,7 +484,7 @@ export default function Home() {
                   </div>
 
                   <Link href={'/portfolio'} aria-label="View all projects">
-                    <img src="/viewAll.svg" alt="View all projects" />
+                    <img src="/viewAll.svg" alt="View all projects" width={170} height={62}/>
                   </Link>
                 </div>
               </div>
@@ -582,7 +582,7 @@ export default function Home() {
                             }}
                           >
                             <div className="flex items-center gap-2 text-white text-base font-bold leading-5">
-                              Learn more <FaArrowRightLong />
+                              Learn more  <span className="sr-only">about {project.title}</span> <FaArrowRightLong />
                             </div>
                           </div>
                         </Link>
