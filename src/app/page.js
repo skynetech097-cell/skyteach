@@ -12,10 +12,6 @@ import { useRouter } from "next/navigation";
 
 export default function Home() {
 
-
-
-  
-
   const [active, setActive] = useState(null);
   const [isDesktop, setIsDesktop] = useState(false);
   const [canLoadSpline, setCanLoadSpline] = useState(false);
