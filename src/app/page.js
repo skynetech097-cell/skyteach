@@ -313,7 +313,7 @@ export default function Home() {
             autoPlay
             loop
             muted
-            playsInline
+            playsInline preload="none"
             controls={false}
             className="w-full min-[480px]:h-full object-cover max-[480px]:h-[230px] max-[400px]:h-[210px]"
           />
@@ -322,7 +322,9 @@ export default function Home() {
         <div className="spline_overlay2 absolute"></div>
       </section>
 
-      <section className="homeBg pt-20">
+      {/* <div></div> */}
+
+      <section className="homeBg pt-20 max-[576px]:pt-14">
         <section className="about_us pb-20 relative min-[992px]:px-[87px] px-10 max-[576px]:px-6">
           <div className="container relative max-w-full">
             <div className="p-4 bg-black/0 rounded-[40px] inline-flex justify-center items-center gap-2.5"
@@ -338,7 +340,7 @@ export default function Home() {
             <div className="grid  min-[1300px]:grid-cols-[2.2fr_0.8fr]  gap-4 mt-10 z-1 relative">
               <div>
                 <img src="/about_us.webp" alt="About us" width={1305} height={706} className="w-full max-[600px]:hidden" />
-                <img src="/about_us1.webp" alt="About us" width={913} height={624} className="w-full min-[600px]:hidden" />
+                <img src="/about_us1.webp" alt="About us" width={934} height={706} className="w-full min-[600px]:hidden" />
               </div>
               <div className="max-[1100px]:grid  grid-rows-3 max-[1100px]:gap-y-5 gap-4 flex flex-col">
                 {about.map((item, index) => (
@@ -609,7 +611,7 @@ export default function Home() {
                                     autoPlay
                                     muted
                                     loop
-                                    playsInline
+                                    playsInline preload="none"
                                     className="absolute inset-0 w-full h-full object-cover min-[1400px]:rounded-[34px] min-[1200px]:rounded-[34px] min-[992px]:rounded-[30px] max-[992px]:rounded-[22px]"
                                   />
                                 </div>
