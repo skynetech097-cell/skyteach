@@ -291,7 +291,7 @@ export default function Home() {
 
   return (
     <main className="relative">
-      <section className="header_banner relative max-[768px]:mt-[100px] max-[576px]:mt-[70px]">
+     {/*  <section className="header_banner relative max-[768px]:mt-[100px] max-[576px]:mt-[70px]">
         <div className="max-[600px]:hidden">
           {canLoadSpline && (
             <>
@@ -320,7 +320,7 @@ export default function Home() {
         </div>
 
         <div className="spline_overlay2 absolute"></div>
-      </section>
+      </section> */}
 
       {/* <div></div> */}
 
@@ -337,12 +337,12 @@ export default function Home() {
             <div className=" text-white mt-4 max-[576px]:mt-1 text-4xl min-[780px]:text-6xl min-[1200px]:text-7xl font-normal font-['Michroma'] leading-[88px} max-[576px]:leading-[65px]">About Us</div>
             <p className="text-white mt-7 max-[576px]:mt-2 text-lg max-[576px]:text-base relative z-1">SKYNETECH is a growing digital agency built for the new generation of brands. We combine creativity, technology, and strategy to design digital experiences that help businesses launch, scale, and stand out. As a startup team, we move fast, adapt quickly, and focus on building smart solutions that create real impact. From websites and applications to branding and digital content, our goal is simple   help businesses grow in the digital world.</p>
 
-            <div className="grid  min-[1300px]:grid-cols-[2.2fr_0.8fr]  gap-4 mt-10 z-1 relative">
+            <div className="grid  min-[1300px]:grid-cols-[2.1fr_0.9fr] min-[1600px]:grid-cols-[2.0fr_1.0fr] gap-4 mt-10 z-1 relative">
               <div>
                 <img src="/about_us.webp" alt="About us" width={1305} height={706} className="w-full max-[600px]:hidden" />
                 <img src="/about_us1.webp" alt="About us" width={934} height={706} className="w-full min-[600px]:hidden" />
               </div>
-              <div className="max-[1100px]:grid  grid-rows-3 max-[1100px]:gap-y-5 gap-4 flex flex-col">
+              <div className="max-[1100px]:grid  grid-rows-3 max-[1100px]:gap-y-5 gap-4 flex flex-col justify-around">
                 {about.map((item, index) => (
                   <div key={index} className="h-fit">
                     <div className="flex items-center gap-2">
@@ -621,7 +621,7 @@ export default function Home() {
                                     <Image width={1046} height={517}
                                       src={img}
                                       alt=""
-                                      className="object-cover min-[1400px]:rounded-[34px] min-[1200px]:rounded-[34px] min-[992px]:rounded-[30px] max-[992px]:rounded-[22px]"
+                                      className="object-cover w-full min-[1400px]:rounded-[34px] min-[1200px]:rounded-[34px] min-[992px]:rounded-[30px] max-[992px]:rounded-[22px] "
                                     />
                                   </div>
                                 )}

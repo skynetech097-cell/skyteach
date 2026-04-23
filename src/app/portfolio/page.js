@@ -300,7 +300,7 @@ const page = () => {
                                                                     <Image width={1046} height={517}
                                                                         src={img}
                                                                         alt="projects"
-                                                                        className="object-cover min-[1400px]:rounded-[34px] min-[1200px]:rounded-[34px] min-[992px]:rounded-[30px] max-[992px]:rounded-[22px]"
+                                                                        className="object-cover w-full min-[1400px]:rounded-[34px] min-[1200px]:rounded-[34px] min-[992px]:rounded-[30px] max-[992px]:rounded-[22px]"
                                                                     />
                                                                 </div>
                                                             )}
